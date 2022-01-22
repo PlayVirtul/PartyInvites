@@ -1,0 +1,41 @@
+﻿@model PartyInvites.Models.GuestResponce
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Party!</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    </head>
+    <body>
+        <h5 class="bg-primary text-white text-center m-2 p-2">ПРИГЛАШЕНИЕ</h5>
+        <form class="m-2" asp-action="RsvpForm" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+                <label asp-for="Name">Ваше имя:</label>
+                <input asp-for="Name" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Ваша почта:</label>
+                <input asp-for="Email" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone">Ваш телефон:</label>
+                <input asp-for="Phone" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Собираешься идти на вечеринку?</label>
+                <select asp-for="WillAttend" class="form-control">
+                    <option value="">Выберите вариант</option>
+                    <option value="true">Да, я приду</option>
+                    <option value="false">Нет, я не приду</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить форму</button>
+        </form>
+    </body>
+</html>
